@@ -1,9 +1,11 @@
 package com.vti.frontend;
 
 import com.vti.backend.PresentationLayer.AccountController;
+import com.vti.entity.Account;
 import com.vti.utils.ScannerUtils;
 
 import java.sql.SQLException;
+import java.util.List;
 
 /*
 Mr.Son
@@ -35,6 +37,15 @@ public class Main {
                 case 2:
                     if(isLogin) {
                         //Hien thi danh sach account;
+                        List<Account> listAccount = accountController.getListAccount();
+                        if(listAccount.size() > 0) {
+                            for (Account account : listAccount) {
+                                System.out.println(account);
+                            }
+                        }else {
+                            System.out.println("Khong co danh sach Sinh vien");
+
+                        }
                     }else {
                         System.out.println("Bạn phải thực hiện đăng nhập trước khi xem danh sách");
                         menu();

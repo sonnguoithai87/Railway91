@@ -70,7 +70,7 @@ public class JDBCConnection {
         return connection;
     }
 
-    public static void colseConnection(Connection connection, PreparedStatement pstmt, ResultSet rs) throws SQLException {
+    public static void closeConnection(Connection connection, PreparedStatement pstmt, ResultSet rs) throws SQLException {
         if (rs != null) {
             rs.close();
 
